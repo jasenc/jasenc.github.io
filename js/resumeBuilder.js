@@ -105,6 +105,8 @@ var projects = {
   - replace the '%data%' in HTMLheaderRole (found in helper.js) with the data
   stored in bio.role.
   - prepend HTMLheaderRole to the div with id=header.
+
+  Note: prepend is used to ensure content is added prior to ul for skills.
 */
 $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 
@@ -115,10 +117,33 @@ $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 // If there are items in the bio.skills array,
 if (bio.skills.length > 0) {
   // append the div for HTMLskillsStart.
-  $('#header').append(HTMLskillsStart);
+  $("#header").append(HTMLskillsStart);
   // Then for each item in bio.skills,
-  for (item in bio.skills) {
+  for (skill in bio.skills) {
     // append that skill to the div with id=skills using replace process.
-    $('#skills').append(HTMLskills.replace("%data%", bio.skills[item]));
+    $("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
   }
+}
+
+// For each item in jobs,
+for (job in work.jobs) {
+
+  // append a new HTMLworkStart element to the div with id=workExperience.
+  $("#workExperience").append(HTMLworkStart);
+
+  // Replace '%data%' content with work JSON content.
+  var formatEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formatTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  var formatDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+  var formatLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+  var formatDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+  // Concat these two strings as they are displayed on the same line.
+  var formatEmployerTitle = formatEmployer.concat(formatTitle)
+
+  // Append job information to the DOM.
+  $(".work-entry:last").append(formatEmployerTitle);
+  $(".work-entry:last").append(formatDates);
+  $(".work-entry:last").append(formatLocation);
+  $(".work-entry:last").append(formatDescription);
 }
