@@ -125,25 +125,29 @@ if (bio.skills.length > 0) {
   }
 }
 
-// For each item in jobs,
-for (job in work.jobs) {
+function displayWork(){
+  // For each item in jobs,
+  for (job in work.jobs) {
 
-  // append a new HTMLworkStart element to the div with id=workExperience.
-  $("#workExperience").append(HTMLworkStart);
+    // append a new HTMLworkStart element to the div with id=workExperience.
+    $("#workExperience").append(HTMLworkStart);
 
-  // Replace '%data%' content with work JSON content.
-  var formatEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-  var formatTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-  var formatDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-  var formatLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-  var formatDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    // Replace '%data%' content with work JSON content.
+    var formatEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formatTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    var formatDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    var formatLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    var formatDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
-  // Concat these two strings as they are displayed on the same line.
-  var formatEmployerTitle = formatEmployer.concat(formatTitle)
+    // Concat these two strings as they are displayed on the same line.
+    var formatEmployerTitle = formatEmployer.concat(formatTitle)
 
-  // Append job information to the DOM.
-  $(".work-entry:last").append(formatEmployerTitle);
-  $(".work-entry:last").append(formatDates);
-  $(".work-entry:last").append(formatLocation);
-  $(".work-entry:last").append(formatDescription);
+    // Append job information to the DOM.
+    $(".work-entry:last").append(formatEmployerTitle);
+    $(".work-entry:last").append(formatDates);
+    $(".work-entry:last").append(formatLocation);
+    $(".work-entry:last").append(formatDescription);
+  }
 }
+
+displayWork()
