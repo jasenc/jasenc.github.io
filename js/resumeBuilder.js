@@ -1,9 +1,18 @@
 /*
-This is empty on purpose! Your code to build the resume will go here.
- */
+  Jasen Carroll
+  August 10th, 2015
+
+  resumeBuilder.js is used to save all of the data necessary to display a
+  dynamically generated resume website.
+
+  Storing information for bio, education, work, and projects as JSONs allow
+  for easy future editing/updating.
+*/
+
 var bio = {
   "name": "Jasen Carroll",
   "role": "Web Developer",
+  // Contacts is a nested object.
   "contacts": {
     "mobile": "484.318.9403",
     "email": "jasen.c8@gmail.com",
@@ -11,12 +20,14 @@ var bio = {
     "location": "Portland, OR"
   },
   "welcomeMessage": "Hello, welcome to my online resume.",
+  // Skills is a nested array.
   "skills": ["HTML", "CSS", "JavaScript", "Python", "SQL", "MySQL", "PostgreSQL"],
   "biopic": "../images/linkedIn.jpg"
 }
 
 var education = {
- "schools": [
+  // Schools is a nested array which takes each school as an object.
+  "schools": [
     {
       "name": "Drexel University",
       "location": "Philadelphia, PA",
@@ -45,6 +56,7 @@ var education = {
 }
 
 var work = {
+  // Jobs is a nested array which takes each job as an object.
   "jobs": [
     {
       "employer": "Acumed Inc (consulting through Lab Support)",
@@ -71,6 +83,7 @@ var work = {
 }
 
 var projects = {
+  // Projects is a nested array which takes each job as an object.
   "projects": [
     {
       "title": "Movie Trailers",
@@ -87,11 +100,25 @@ var projects = {
   ]
 }
 
+/*
+  From inner most parenthesis out:
+  - replace the '%data%' in HTMLheaderRole (found in helper.js) with the data
+  stored in bio.role.
+  - prepend HTMLheaderRole to the div with id=header.
+*/
+$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 
-//
-// var formattedName = HTMLheaderName.replace("%data%", bio.name);
-//
-// var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-//
-// $("#header").prepend(formattedRole);
-// $("#header").prepend(formattedName);
+// Process is repeated for HTMLheaderName, prepended second to ensure it is
+// displayed first on the website.
+$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+
+// If there are items in the bio.skills array,
+if (bio.skills.length > 0) {
+  // append the div for HTMLskillsStart.
+  $('#header').append(HTMLskillsStart);
+  // Then for each item in bio.skills,
+  for (item in bio.skills) {
+    // append that skill to the div with id=skills using replace process.
+    $('#skills').append(HTMLskills.replace("%data%", bio.skills[item]));
+  }
+}
