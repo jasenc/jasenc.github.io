@@ -65,7 +65,7 @@ The International Name challenge in Lesson 2 where you'll create a function that
 $(document).ready(function() {
   $('button').click(function() {
     var iName = inName() || function(){};
-    $('#name').html(iName);  
+    $('#name').html(iName);
   });
 });
 
@@ -84,8 +84,14 @@ function logClicks(x,y) {
   console.log('x location: ' + x + '; y location: ' + y);
 }
 
+// When the document is clicked, create an event handler named 'loc'
 $(document).click(function(loc) {
-  // your code goes here!
+  // Save the x-position of the click using loc.pageX
+  var x = loc.pageX;
+  // Save the y-position of the click using loc.pageY
+  var y = loc.pageY;
+  // Pass those values through logClicks to save to clickLocations and log to console.
+  logClicks(x,y);
 });
 
 
@@ -109,9 +115,9 @@ function initializeMap() {
     disableDefaultUI: true
   };
 
-  /* 
+  /*
   For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js. 
+  appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
