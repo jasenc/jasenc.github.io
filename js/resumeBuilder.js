@@ -76,7 +76,7 @@ var education = {
       "degree": "B.S.",
       "majors": ["Mechanical Engineering"],
       "dates": 2012,
-      "url": "http://drexel.edu/"
+      "link": "http://drexel.edu/"
     },
     {
       "name": "East Stroudsburg University",
@@ -84,17 +84,51 @@ var education = {
       "degree": "Transfer",
       "majors": ["Physics"],
       "dates": 2009,
-      "url": "http://www.esu.edu/"
+      "link": "http://www.esu.edu/"
     }
   ],
   "onlineCourses": [
     {
       "title": "Full Stack Nanodegree",
       "school": "Udacity",
-      "date": 2015,
-      "url": "https://www.udacity.com/"
+      "dates": 2015,
+      "link": "https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004"
     }
-  ]
+  ],
+  "display": function(){
+
+    // For each entry in the array of schools of the education object.
+    for (school in education.schools) {
+      // Append a new div to contain that school information.
+      $("#education").append(HTMLschoolStart);
+      // Replace the name in HTMLschoolName with the actual name, save it as formatName.
+      var formatName = HTMLschoolName.replace("%data%", education.schools[school].name);
+      // Replace the href in formatName with the actual link, save it as formatNameLink.
+      var formatNameLink = formatName.replace("#", education.schools[school].link);
+      // Add the information for the degree type.
+      var formatDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+      // Finally concat these all together.
+      var formatNameLinkDegree = formatNameLink.concat(formatDegree);
+      // Append formatNameLink to a div with the class="education-entry"
+      $(".education-entry:last").append(formatNameLinkDegree);
+      // Append the following information with an inline replace.
+      $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[school].dates));
+      $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[school].location));
+      $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[school].majors));
+    };
+
+    // Repeat process for online classes
+    $("#education").append(HTMLonlineClasses);
+    for (course in education.onlineCourses) {
+      $("#education").append(HTMLschoolStart);
+      var formatTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+      var formatTitleLink = formatTitle.replace("#", education.onlineCourses[course].link);
+      var formatSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+      var formatTitleLinkSchool = formatTitleLink.concat(formatSchool);
+      $(".education-entry:last").append(formatTitleLinkSchool);
+      $(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates));
+    }
+  }
 }
 
 var work = {
@@ -187,6 +221,7 @@ var projects = {
 
 bio.display();
 work.display();
+education.display();
 
 function locationizer(workObj) {
   locations = [];
