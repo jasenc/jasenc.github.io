@@ -22,7 +22,19 @@ var bio = {
   "welcomeMessage": "Hello, welcome to my online resume.",
   // Skills is a nested array.
   "skills": ["HTML", "CSS", "JavaScript", "Python", "SQL", "MySQL", "PostgreSQL"],
-  "biopic": "../images/linkedIn.jpg"
+  "biopic": "../images/linkedIn.jpg",
+  "display": function() {
+    // If there are items in the bio.skills array,
+    if (bio.skills.length > 0) {
+      // append the div for HTMLskillsStart.
+      $("#header").append(HTMLskillsStart);
+      // Then for each item in bio.skills,
+      for (skill in bio.skills) {
+        // append that skill to the div with id=skills using replace process.
+        $("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
+      }
+    }
+  }
 }
 
 var education = {
@@ -132,17 +144,6 @@ $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 // displayed first on the website.
 $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 
-// If there are items in the bio.skills array,
-if (bio.skills.length > 0) {
-  // append the div for HTMLskillsStart.
-  $("#header").append(HTMLskillsStart);
-  // Then for each item in bio.skills,
-  for (skill in bio.skills) {
-    // append that skill to the div with id=skills using replace process.
-    $("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
-  }
-}
-
 function displayWork(){
   // For each item in jobs,
   for (job in work.jobs) {
@@ -168,7 +169,8 @@ function displayWork(){
   }
 }
 
-displayWork()
+bio.display();
+displayWork();
 
 function locationizer(workObj) {
   locations = [];
