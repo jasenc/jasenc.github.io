@@ -179,15 +179,6 @@ function locationizer(workObj) {
   return locations;
 }
 
-function inName() {
-  var names = bio.name.split(" ");
-  names[1] = names[1].toUpperCase();
-  names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
-  return bio.name = names.join(" ");
-}
-
-$("#header").append(internationalizeButton);
-
 projects.display();
 
 $("#mapDiv").append(googleMap);
