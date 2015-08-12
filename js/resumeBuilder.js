@@ -89,15 +89,33 @@ var projects = {
       "title": "Movie Trailers",
       "dates": "July 2015",
       "description": "Using Python and server-side code this application dynamically generates a web page to display favorite movies.",
-      "images": "jasenc.github.io/movie_trailers"
+      "link": "https://jasenc.github.io/movie_trailers"
     },
     {
       "title": "Tournament Results",
       "dates": "July 2015",
       "description": "A program to capture relevant functions needed to properly execute a Swiss Pairings style tournament, with a PostgreSQL database.",
-      "images": "https://github.com/jasenc/tournament_results"
+      "link": "https://github.com/jasenc/tournament_results"
     }
-  ]
+  ],
+  // Display is a function that is saved inside of the projects object.
+  "display": function(){
+    // For each project in the array projects of the object projects.
+    for (project in projects.projects) {
+      // Append a new div.
+      $("#projects").append(HTMLprojectStart);
+      // Replace '%data%' content with work JSON content.
+      var formatTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+      var formatTitleLink = formatTitle.replace("#", projects.projects[project].link)
+      var formatDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+      var formatDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+
+      // Append job information to the DOM.
+      $(".project-entry:last").append(formatTitleLink);
+      $(".project-entry:last").append(formatDates);
+      $(".project-entry:last").append(formatDescription);
+    }
+  }
 }
 
 /*
@@ -151,3 +169,25 @@ function displayWork(){
 }
 
 displayWork()
+
+function locationizer(workObj) {
+  locations = [];
+  for (var job in workObj.jobs) {
+    var newLocation = workObj.jobs[job].location;
+    locations.push(newLocation);
+  }
+  return locations;
+}
+
+function inName() {
+  var names = bio.name.split(" ");
+  names[1] = names[1].toUpperCase();
+  names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+  return bio.name = names.join(" ");
+}
+
+$("#header").append(internationalizeButton);
+
+projects.display();
+
+$("#mapDiv").append(googleMap);
