@@ -72,7 +72,13 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: #434a54;
+    color: #020202;
+    font: 400 16px/22px 'Roboto Condensed' Helvetica, Arial, sans-serif;
+    width: 100%;
 }
 
 .clear-fix {
@@ -87,9 +93,9 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
   line-height: 48px;
   display: inline;
+  color: #f5ae23;
 }
 
 h2 {
@@ -122,6 +128,10 @@ h5 {
 
 }
 
+#header {
+  color: #bebebe;
+  padding-top: 5%;
+}
 
 .date-text {
   font-style: italic;
@@ -146,6 +156,10 @@ p {
   line-height: 21px;
 }
 
+.project-entry p {
+  color: #bebebe;
+}
+
 a {
   color: #1199c3;
   text-decoration: none;
@@ -164,16 +178,18 @@ a.resume {
 }
 
 .welcome-message {
-  font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
   line-height: 28px;
+  color: #bebebe;
 }
 
-#skills-h3 {
+#skills-h3,
+#contact-h3 {
   color: #f5ae23;
-  display: none;
+  padding-left: 0;
 }
+
+#contact-h3 {padding-top: 20px;}
 
 .orange {
   background-color: #f5ae23;
@@ -183,10 +199,10 @@ a.resume {
   color: #f5ae23;
 }
 
-.white-text {
+/*.white-text {
   font-weight: bold;
   color: #fff;
-}
+}*/
 
 .gray {
   background-color: #f3f3f3;
@@ -194,14 +210,9 @@ a.resume {
   clear:both;
 }
 
-.dark-gray {
+/*.dark-gray {
   background-color: #4a4a4a;
-}
-
-/* TODO: Replace with image later */
-#header {
-  background-color: #484848;
-}
+}*/
 
 .flex-box {
   display: -webkit-flex;
@@ -221,14 +232,17 @@ ul {
 }
 
 .biopic {
-  float: left;
-  padding: 10px;
+  float: right;
+  margin: 10px 10px 10px 20px;
   width: 200px;
   display: none;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #fff;
 }
 
-img {
-  padding: 10px;
+.col-1-3 {
+  width: 30%;
+  float: left;
 }
 
 span {

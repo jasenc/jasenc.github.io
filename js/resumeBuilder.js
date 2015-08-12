@@ -41,13 +41,16 @@ var bio = {
 
       Note: prepend is used to ensure content is added prior to ul for contacts.
     */
+    $("#header").prepend(HTMLcontactStart);
     $("#header").prepend(HTMLresume.replace("%data%", bio.resumeFile));
     $("#header").prepend(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
+    $("#header").prepend(HTMLbioPic.replace("%data%", bio.pic));
     $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
     $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-    $("#header").prepend(HTMLbioPic.replace("%data%", bio.pic));
+
 
     // At contact information start appending data.
+
     $("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
     $("#footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
     // Email & GitHub use global replace to simultaneously replace href and
