@@ -92,6 +92,16 @@ a {
   display: block;
 }
 
+a.contact {
+  margin: 0;
+  display: inline-block;
+}
+
+a.resume {
+  margin: 0;
+  display: inline;
+}
+
 .welcome-message {
   font-style: italic;
   font-size: 18px;

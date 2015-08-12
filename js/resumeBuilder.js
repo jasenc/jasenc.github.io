@@ -19,25 +19,41 @@ var bio = {
     "github": "https://github.com/jasenc",
     "location": "Portland, OR"
   },
-  "welcomeMessage": "Hello, welcome to my online resume.",
+  "welcomeMessage": "Hello, welcome to my online resume. I am currently working\
+                    towards making a career transition to Software & Web\
+                    Development. Preferably I'd like to be full stack though \
+                    back end programming would be a great alternative. Please\
+                    review my website, most notably my projects listed below\
+                    which include links to the hosted website as well as the\
+                    GitHub repository.",
+  "resumeFile": "https://dl.dropboxusercontent.com/u/13604802/Resume.pdf",
   // Skills is a nested array.
   "skills": ["HTML", "CSS", "JavaScript", "Python", "SQL", "MySQL", "PostgreSQL"],
-  "biopic": "../images/linkedIn.jpg",
+  "pic": "images/linkedIn.jpg",
   "display": function() {
     /*
       From inner most parenthesis out:
-      - replace the '%data%' in HTMLheaderRole (found in helper.js) with the data
-      stored in bio.role.
-      - prepend HTMLheaderRole to the div with id=header.
+      - replace the '%data%' in HTMLresume (found in helper.js) with the data
+      stored in bio.resumeFile.
+      - prepend HTMLresume to the div with id=header.
 
-      Note: prepend is used to ensure content is added prior to ul for skills.
+      Repeat process for each item in bio object.
+
+      Note: prepend is used to ensure content is added prior to ul for contacts.
     */
+    $("#header").prepend(HTMLresume.replace("%data%", bio.resumeFile));
+    $("#header").prepend(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
     $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
-
-    // Process is repeated for HTMLheaderName, prepended second to ensure it is
-    // displayed first on the website.
     $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+    $("#header").prepend(HTMLbioPic.replace("%data%", bio.pic));
 
+    // At contact information start appending data.
+    $("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+    // Email & GitHub use global replace to simultaneously replace href and
+    // display content.
+    $("#topContacts").append(HTMLemail.replace(/%data%/g, bio.contacts.email));
+    $("#topContacts").append(HTMLgithub.replace(/%data%/g, bio.contacts.github));
+    $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
     // If there are items in the bio.skills array,
     if (bio.skills.length > 0) {
       // append the div for HTMLskillsStart.
