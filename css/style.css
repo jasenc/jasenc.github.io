@@ -55,40 +55,15 @@ table {
 
 /*
   ========================================
-  Custom Styles
+  Typography
   ========================================
 */
-
-body,
-div,
-ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding:0;
-  margin:0;
-}
 
 body {
     background: #434a54;
     color: #020202;
     font: 400 16px/22px 'Roboto Condensed' Helvetica, Arial, sans-serif;
     width: 100%;
-}
-
-.clear-fix {
-  overflow: auto;
-}
-
-.education-entry,
-.work-entry,
-.project-entry {
-  padding: 0 5% 1% 5%;
 }
 
 h1 {
@@ -123,32 +98,20 @@ h4 {
 h2,
 h3,
 h4,
-h5 {
-  padding:10px 5%;
-
-}
+h5 {padding:10px 5%;}
 
 #header {
   color: #bebebe;
   padding-top: 5%;
 }
 
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
-}
+/*
+  ========================================
+  Custom Styles
+  ========================================
+*/
 
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-
-}
+.clear-fix {overflow: auto;}
 
 p {
   font-size: 14px;
@@ -156,9 +119,7 @@ p {
   line-height: 21px;
 }
 
-.project-entry p {
-  color: #bebebe;
-}
+.project-entry p {color: #bebebe;}
 
 a {
   color: #1199c3;
@@ -177,11 +138,9 @@ a.resume {
   display: inline;
 }
 
-.welcome-message {
-  font-size: 18px;
-  line-height: 28px;
-  color: #bebebe;
-}
+ul {list-style-type: none;}
+
+span {padding: 5px;}
 
 #skills-h3,
 #contact-h3 {
@@ -191,28 +150,57 @@ a.resume {
 
 #contact-h3 {padding-top: 20px;}
 
-.orange {
-  background-color: #f5ae23;
+#lets-connect {text-align: center;}
+
+#map {
+  display: block;
+  height: 100%;
+  margin: 0 5%;
+}
+
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
+.education-entry,
+.work-entry,
+.project-entry {
+  padding: 0 5% 1% 5%;
+}
+
+.welcome-message {
+  font-size: 18px;
+  line-height: 28px;
+  color: #bebebe;
+}
+
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: left;
+}
+
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999;
+  line-height: 16px;
+  float: right;
 }
 
 .orange-text {
   color: #f5ae23;
 }
 
-/*.white-text {
-  font-weight: bold;
-  color: #fff;
-}*/
-
 .gray {
   background-color: #f3f3f3;
   padding-bottom: 10px;
   clear:both;
 }
-
-/*.dark-gray {
-  background-color: #4a4a4a;
-}*/
 
 .flex-box {
   display: -webkit-flex;
@@ -223,13 +211,7 @@ a.resume {
   padding: 10px;
 }
 
-.center-content {
-  padding: 2.5% 5%;
-}
-
-ul {
-  list-style-type: none;
-}
+.center-content {padding: 2.5% 5%;}
 
 .biopic {
   float: right;
@@ -240,20 +222,11 @@ ul {
   box-shadow: 0 0 20px #fff;
 }
 
-.col-1-3 {
-  width: 30%;
-  float: left;
-}
-
-span {
-  padding: 5px;
-}
-
-#lets-connect {
-  text-align: center;
-}
-
-/* Media queries to handle various device widths */
+/*
+  ========================================
+  Media Queries
+  ========================================
+*/
 
 @media only screen and (max-width: 1024px) {
   #lets-connect {
@@ -277,18 +250,6 @@ span {
   .welcome-message {
     display: none;
   }
-}
-
-#map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
-}
-
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
 }
 
 @media only screen and (min-width: 750px) {
