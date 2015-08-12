@@ -24,6 +24,20 @@ var bio = {
   "skills": ["HTML", "CSS", "JavaScript", "Python", "SQL", "MySQL", "PostgreSQL"],
   "biopic": "../images/linkedIn.jpg",
   "display": function() {
+    /*
+      From inner most parenthesis out:
+      - replace the '%data%' in HTMLheaderRole (found in helper.js) with the data
+      stored in bio.role.
+      - prepend HTMLheaderRole to the div with id=header.
+
+      Note: prepend is used to ensure content is added prior to ul for skills.
+    */
+    $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+
+    // Process is repeated for HTMLheaderName, prepended second to ensure it is
+    // displayed first on the website.
+    $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+
     // If there are items in the bio.skills array,
     if (bio.skills.length > 0) {
       // append the div for HTMLskillsStart.
@@ -153,21 +167,6 @@ var projects = {
     }
   }
 }
-
-/*
-  From inner most parenthesis out:
-  - replace the '%data%' in HTMLheaderRole (found in helper.js) with the data
-  stored in bio.role.
-  - prepend HTMLheaderRole to the div with id=header.
-
-  Note: prepend is used to ensure content is added prior to ul for skills.
-*/
-$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
-
-// Process is repeated for HTMLheaderName, prepended second to ensure it is
-// displayed first on the website.
-$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-
 
 
 bio.display();
