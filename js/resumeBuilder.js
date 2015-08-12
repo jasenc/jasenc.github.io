@@ -49,11 +49,15 @@ var bio = {
 
     // At contact information start appending data.
     $("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+    $("#footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
     // Email & GitHub use global replace to simultaneously replace href and
     // display content.
     $("#topContacts").append(HTMLemail.replace(/%data%/g, bio.contacts.email));
+    $("#footerContacts").append(HTMLemail.replace(/%data%/g, bio.contacts.email));
     $("#topContacts").append(HTMLgithub.replace(/%data%/g, bio.contacts.github));
+    $("#footerContacts").append(HTMLgithub.replace(/%data%/g, bio.contacts.github));
     $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+    $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
     // If there are items in the bio.skills array,
     if (bio.skills.length > 0) {
       // append the div for HTMLskillsStart.
