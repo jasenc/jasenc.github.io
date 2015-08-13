@@ -26,7 +26,7 @@ var bio = {
                     review my website, most notably my projects listed below\
                     which include links to the hosted website as well as the\
                     GitHub repository.",
-  "resumeFile": "https://dl.dropboxusercontent.com/u/13604802/Resume.pdf",
+  "resumeFile": "https://dl.dropboxusercontent.com/u/13604802/Resume.pdf?dl=1",
   // Skills is a nested array.
   "skills": ["HTML", "CSS", "JavaScript", "Python", "SQL", "MySQL", "PostgreSQL"],
   "pic": "images/linkedIn.jpg",
