@@ -16,7 +16,8 @@ var bio = {
   "contacts": {
     "mobile": "484.318.9403",
     "email": "jasen.c8@gmail.com",
-    "github": "https://github.com/jasenc",
+    "github": "jasenc",
+    "githubLink": "https://github.com/jasenc",
     "location": "Portland, OR"
   },
   "welcomeMessage": "Hello, welcome to my online resume. I am currently working\
@@ -53,12 +54,16 @@ var bio = {
     // At contact information start appending data.
     $("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
     $("#footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
-    // Email & GitHub use global replace to simultaneously replace href and
+    // Email uses global replace to simultaneously replace href and
     // display content.
     $("#topContacts").append(HTMLemail.replace(/%data%/g, bio.contacts.email));
     $("#footerContacts").append(HTMLemail.replace(/%data%/g, bio.contacts.email));
-    $("#topContacts").append(HTMLgithub.replace(/%data%/g, bio.contacts.github));
-    $("#footerContacts").append(HTMLgithub.replace(/%data%/g, bio.contacts.github));
+    // Github has two different entries to be replaced.
+    var formatGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formatGitHubLink = formatGitHub.replace("#", bio.contacts.githubLink);
+    $("#topContacts").append(formatGitHubLink);
+    $("#footerContacts").append(formatGitHubLink);
+    
     $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
     $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
     // If there are items in the bio.skills array,

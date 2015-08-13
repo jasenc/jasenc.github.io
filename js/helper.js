@@ -15,7 +15,7 @@ var HTMLcontactStart = '<h3 id="contact-h3">Contact:</h3>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><a href="mailto:%data%" class="contact">%data%</a></li>';
 var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><a href="%data%" targer="_blank" class="contact">%data%</a></li>';
+var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><a href="#" target="_blank" class="contact">%data%</a></li>';
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span>%data%</span></li>';
 
