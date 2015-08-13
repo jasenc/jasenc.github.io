@@ -17,4 +17,6 @@ Aug 10th, 2015
 
 ## Known issues
 
-* Mobile Safari improperly displays flex-item(s)
+* iPhone 5S
+  * Safari improperly displays flex-item(s)
+  * Google Map hangs below container div
