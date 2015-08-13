@@ -1,26 +1,22 @@
 /*
-
-This file contains all of the code running in the background that makes resumeBuilder.js possible. We call these helper functions because they support your code in this course.
-
-Don't worry, you'll learn what's going on in this file throughout the course. You won't need to make any changes to it until you start experimenting with inserting a Google Map in Problem Set 3.
-
-Cameron Pittman
+Jasen Carroll
+Aug 10th, 2015
 */
 
 
 /*
-These are HTML strings. As part of the course, you'll be using JavaScript functions
-replace the %data% placeholder text you see in them.
+HTML strings saved as JavaScript variables in order to dynamically generate
+website content using JSONs found in resumeBuilder.js.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span>';
 
 var HTMLcontactStart = '<h3 id="contact-h3">Contact:</h3>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><a href="mailto:%data%" class="contact">%data%</a></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span">%data%</span></li>';
 var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><a href="%data%" targer="_blank" class="contact">%data%</a></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
+var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span>%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic"><hr/>';
@@ -28,7 +24,7 @@ var HTMLwelcomeMsg = '<p class="welcome-message">%data%</p>';
 var HTMLresume = '<br><p class="welcome-message">Additionally a PDF version of my resume is available for download <a href="%data%" class="resume">here</a>.</p>'
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskills = '<li class="flex-item"><span">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
@@ -56,11 +52,10 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 
 var googleMap = '<div id="map"></div>';
 
-/*
-The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
-*/
+// initialize array to capture click locations.
 clickLocations = [];
 
+// Function to log click locations to the console and save them to clickLocations.
 function logClicks(x,y) {
   clickLocations.push(
     {
@@ -84,15 +79,14 @@ $(document).click(function(loc) {
 
 
 /*
-This is the fun part. Here's where we generate the custom Google Map for the website.
-See the documentation below for more details.
+Generate a custom Google Map for the website.
 https://developers.google.com/maps/documentation/javascript/reference
 */
 var map;    // declares a global map variable
 
 
 /*
-Start here! initializeMap() is called when page is loaded.
+InitializeMap() is called when page is loaded.
 */
 function initializeMap() {
 
@@ -163,7 +157,7 @@ function initializeMap() {
       content: name
     });
 
-    // hmmmm, I wonder what this is about...
+    // Add a pop-up with the location if a pin is clicked.
     google.maps.event.addListener(marker, 'click', function() {
       infoWindow.open(map, marker);
     });
@@ -222,10 +216,6 @@ function initializeMap() {
   pinPoster(locations);
 
 }
-
-/*
-Uncomment the code below when you're ready to implement a Google Map!
-*/
 
 // Calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
