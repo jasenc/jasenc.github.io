@@ -15,10 +15,6 @@ Jasen Carroll
 jasen.c8@gmail.com  
 Aug 10th, 2015
 
-## Future Work
-
-* Integrate clickLocations with Google Analytics
-
 ## Known issues
 
 * Mobile Safari improperly displays flex-item(s)
