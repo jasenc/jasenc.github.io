@@ -17,5 +17,8 @@ Aug 10th, 2015
 
 ## Future Work
 
-* Implement HTML5 Boilerplate
 * Integrate clickLocations with Google Analytics
+
+## Known issues
+
+* Mobile Safari improperly displays flex-item(s)
