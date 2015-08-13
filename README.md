@@ -14,3 +14,8 @@ Additionally `index.html` and `style.css` are included to display the web conten
 Jasen Carroll  
 jasen.c8@gmail.com  
 Aug 10th, 2015
+
+## Future Work
+
+* Implement HTML5 Boilerplate
+* Integrate clickLocations with Google Analytics
