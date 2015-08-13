@@ -37,6 +37,7 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#" target="_blank">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectGitHub = '<a href="#" target="_blank">GitHub</a>'
 
 var HTMLschoolStart = '<div class="education-entry clear-fix"></div>';
 var HTMLschoolName = '<a href="#" target="_blank">%data%';

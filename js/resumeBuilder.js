@@ -24,8 +24,8 @@ var bio = {
                     Development. Preferably I'd like to be full stack though \
                     back end programming would be a great alternative. Please\
                     review my website, most notably my projects listed below\
-                    which include links to the hosted website as well as the\
-                    GitHub repository.",
+                    which include links to their hosted website as well as\
+                    their GitHub repository.",
   "resumeFile": "https://dl.dropboxusercontent.com/u/13604802/Resume.pdf?dl=1",
   // Skills is a nested array.
   "skills": ["HTML", "CSS", "JavaScript", "Python", "SQL", "MySQL", "PostgreSQL"],
@@ -196,13 +196,15 @@ var projects = {
       "title": "Movie Trailers",
       "dates": "July 2015",
       "description": "Using Python and server-side code this application dynamically generates a web page to display favorite movies.",
-      "link": "https://jasenc.github.io/movie_trailers"
+      "link": "https://jasenc.github.io/movie_trailers",
+      "github": "https://github.com/jasenc/movie_trailers"
     },
     {
       "title": "Tournament Results",
       "dates": "July 2015",
       "description": "A program to capture relevant functions needed to properly execute a Swiss Pairings style tournament, with a PostgreSQL database.",
-      "link": "https://github.com/jasenc/tournament_results"
+      "link": "https://github.com/jasenc/tournament_results",
+      "github": "https://github.com/jasenc/movie_trailers"
     }
   ],
   // Display is a function that is saved inside of the projects object.
@@ -216,11 +218,13 @@ var projects = {
       var formatTitleLink = formatTitle.replace("#", projects.projects[project].link)
       var formatDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
       var formatDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+      var formatGitHub = HTMLprojectGitHub.replace("#", projects.projects[project].description);
 
       // Append job information to the DOM.
       $(".project-entry:last").append(formatTitleLink);
       $(".project-entry:last").append(formatDates);
       $(".project-entry:last").append(formatDescription);
+      $(".project-entry:last").append(formatGitHub);
     }
   }
 }
