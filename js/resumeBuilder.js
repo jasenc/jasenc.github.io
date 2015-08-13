@@ -39,7 +39,9 @@ var bio = {
 
       Repeat process for each item in bio object.
 
-      Note: prepend is used to ensure content is added prior to ul for contacts.
+      Note: prepend HTMLcontactStart first as last displayed item is prepended
+      first, this prevents items being appended to the following ul with
+      id="topContacts".
     */
     $("#header").prepend(HTMLcontactStart);
     $("#header").prepend(HTMLresume.replace("%data%", bio.resumeFile));
