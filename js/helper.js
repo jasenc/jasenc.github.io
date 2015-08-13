@@ -226,3 +226,12 @@ window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
  map.fitBounds(mapBounds);
 });
+
+function locationizer(workObj) {
+  locations = [];
+  for (var job in workObj.jobs) {
+    var newLocation = workObj.jobs[job].location;
+    locations.push(newLocation);
+  }
+  return locations;
+}

@@ -48,9 +48,7 @@ var bio = {
     $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
     $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
 
-
     // At contact information start appending data.
-
     $("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
     $("#footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
     // Email & GitHub use global replace to simultaneously replace href and
@@ -225,20 +223,8 @@ var projects = {
   }
 }
 
-
 bio.display();
 work.display();
 education.display();
-
-function locationizer(workObj) {
-  locations = [];
-  for (var job in workObj.jobs) {
-    var newLocation = workObj.jobs[job].location;
-    locations.push(newLocation);
-  }
-  return locations;
-}
-
 projects.display();
-
 $("#mapDiv").append(googleMap);
