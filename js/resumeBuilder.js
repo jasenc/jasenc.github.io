@@ -63,7 +63,7 @@ var bio = {
     var formatGitHubLink = formatGitHub.replace("#", bio.contacts.githubLink);
     $("#topContacts").append(formatGitHubLink);
     $("#footerContacts").append(formatGitHubLink);
-    
+
     $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
     $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
     // If there are items in the bio.skills array,
@@ -151,21 +151,29 @@ var work = {
       "title": "CAPA Consultant",
       "location": "Portland, OR",
       "dates": "Feb 2015 - Jul 2015",
-      "description": "Drive CAPA to closure by auditing validation documentation, contacting suppliers, authoring internal memos."
+      "description": "Drive CAPA to closure by auditing validation\
+                      documentation, contacting suppliers, authoring internal\
+                      memos.",
+      "link": "http://www.acumed.net/"
     },
     {
       "employer": "Johnson & Johnson",
       "title": "Pilot Plant Lead",
       "location": "Los Angeles, CA",
       "dates": "Jan 2014 - Nov 2014",
-      "description": "Lead personnel and activities of R&D pilot plant for consumer products - shampoo, conditioner, lotion, sunscreen, face & body wash."
+      "description": "Lead personnel and activities of R&D pilot plant for\
+                      consumer products - shampoo, conditioner, lotion,\
+                      sunscreen, face & body wash.",
+      "link": "http://www.jnj.com/"
     },
     {
       "employer": "Johnson & Johnson (consulting through Aerotek)",
       "title": "Validation Engineer",
       "location": "Los Angeles, CA",
       "dates": "Sep 2012 - Dec 2013",
-      "description": "Assist in remediation CAPA by authoring best-in-class documentation and supporting batching activities"
+      "description": "Assist in remediation CAPA by authoring best-in-class\
+                      documentation and supporting batching activities.",
+      "link": "http://www.jnj.com/"
     }
   ],
   "display": function(){
@@ -177,16 +185,17 @@ var work = {
 
       // Replace '%data%' content with work JSON content.
       var formatEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+      var formatEmployerLink = formatEmployer.replace("#", work.jobs[job].link);
       var formatTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
       var formatDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
       var formatLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
       var formatDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
       // Concat these two strings as they are displayed on the same line.
-      var formatEmployerTitle = formatEmployer.concat(formatTitle)
+      var formatEmployerLinkTitle = formatEmployerLink.concat(formatTitle)
 
       // Append job information to the DOM.
-      $(".work-entry:last").append(formatEmployerTitle);
+      $(".work-entry:last").append(formatEmployerLinkTitle);
       $(".work-entry:last").append(formatDates);
       $(".work-entry:last").append(formatLocation);
       $(".work-entry:last").append(formatDescription);
