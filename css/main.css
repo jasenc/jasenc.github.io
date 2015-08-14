@@ -166,7 +166,10 @@ a.resume {
     display: inline;
 }
 
-ul {list-style-type: none;}
+ul {
+    list-style-type: none;
+    padding: left;
+}
 
 span {padding: 5px;}
 
@@ -180,6 +183,10 @@ span {padding: 5px;}
 #contact-h3 {padding-top: 20px;}
 
 #lets-connect {text-align: center;}
+
+#lets-connect ul {
+    padding: 0;
+}
 
 #map {
     display: block;
@@ -277,6 +284,7 @@ span {padding: 5px;}
     }
     .list-contact {
         display:block;
+        padding: 0;
     }
     .biopic {
         width: 150px;
