@@ -14,8 +14,8 @@ var bio = {
   "role": "Web Developer",
   // Contacts is a nested object.
   "contacts": {
-    "mobile": "484.318.9403",
-    "email": "jasen.c8@gmail.com",
+    "mobile": "971.285.4602",
+    "email": "jasen.c@icloud.com",
     "github": "jasenc",
     "githubLink": "https://github.com/jasenc",
     "location": "Portland, OR"
