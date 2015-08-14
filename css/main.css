@@ -43,7 +43,8 @@ hr {
     height: 1px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 1em 0;
+    margin-top: 0;
+    margin-bottom: 1em;
     padding: 0;
 }
 
@@ -207,12 +208,12 @@ span {padding: 5px;}
 .list-contact,
 .skill {
     display: inline-block;
-    margin-left: 5%;
+    margin-right: 5%;
     margin-bottom: 10px;
 }
 .list-contact:last-of-type
 .skill:first-of-type {
-    margin-left: 0;
+    margin-right: 0;
 }
 
 .date-text {
@@ -274,11 +275,21 @@ span {padding: 5px;}
     #lets-connect {
         margin-top: 10%;
     }
+    .list-contact {
+        display:block;
+    }
     .biopic {
         width: 150px;
     }
     .welcome-message {
         display: none;
+    }
+    #name {
+        display: block;
+        margin-bottom: 0;
+    }
+    #mapDiv {
+        padding-bottom: 10%;
     }
 }
 
