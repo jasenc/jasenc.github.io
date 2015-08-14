@@ -66,13 +66,14 @@ var bio = {
     $("#topContacts").append(formatGitHubLink);
     $("#footerContacts").append(formatGitHubLink);
 
-    $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
-    $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
-
     var formatBlog = HTMLblog.replace("%data%", bio.contacts.blog);
     var formatBlogLink = formatBlog.replace("#", bio.contacts.blogLink);
     $("#topContacts").append(formatBlogLink);
     $("#footerContacts").append(formatBlogLink);
+
+    $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+    $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+
     // If there are items in the bio.skills array,
     if (bio.skills.length > 0) {
       // append the div for HTMLskillsStart.
