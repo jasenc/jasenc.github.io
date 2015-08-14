@@ -18,6 +18,8 @@ var bio = {
     "email": "jasen.c@icloud.com",
     "github": "jasenc",
     "githubLink": "https://github.com/jasenc",
+    "blog": "blog.jasencarroll.com",
+    "blogLink": "http://blog.jasencarroll.com/",
     "location": "Portland, OR"
   },
   "welcomeMessage": "Hello, welcome to my online resume. I am currently working\
@@ -66,6 +68,11 @@ var bio = {
 
     $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
     $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+
+    var formatBlog = HTMLblog.replace("%data%", bio.contacts.blog);
+    var formatBlogLink = formatBlog.replace("#", bio.contacts.blogLink);
+    $("#topContacts").append(formatBlogLink);
+    $("#footerContacts").append(formatBlogLink);
     // If there are items in the bio.skills array,
     if (bio.skills.length > 0) {
       // append the div for HTMLskillsStart.

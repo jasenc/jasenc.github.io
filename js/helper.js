@@ -16,7 +16,7 @@ var HTMLmobile = '<li class="list-contact"><span class="orange-text">mobile</spa
 var HTMLemail = '<li class="list-contact"><span class="orange-text">email</span><a href="mailto:%data%" class="contact">%data%</a></li>';
 var HTMLtwitter = '<li class="list-contact"><span class="orange-text">twitter</span><span">%data%</span></li>';
 var HTMLgithub = '<li class="list-contact"><span class="orange-text">github</span><a href="#" target="_blank" class="contact">%data%</a></li>';
-var HTMLblog = '<li class="list-contact"><span class="orange-text">blog</span><span">%data%</span></li>';
+var HTMLblog = '<li class="list-contact"><span class="orange-text">blog</span><a href="#" target="_blank" class="contact">%data%</a></li>';
 var HTMLlocation = '<li class="list-contact"><span class="orange-text">location</span><span>%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic"><hr/>';
