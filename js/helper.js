@@ -21,7 +21,7 @@ var HTMLlocation = '<li class="list-contact"><span class="orange-text">location<
 
 var HTMLbioPic = '<img src="%data%" class="biopic"><hr/>';
 var HTMLwelcomeMsg = '<p class="welcome-message">%data%</p>';
-var HTMLresume = '<p class="welcome-message">Additionally a PDF version of my resume is available for download <a href="%data%" class="resume">here</a>.</p>'
+var HTMLresume = '<p class="welcome-message">Additionally a PDF version of my resume is available for download <a href="%data%" class="resume">here</a>.</p>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills"></ul>';
 var HTMLskills = '<li class="skill"><span">%data%</span></li>';
@@ -37,7 +37,7 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#" target="_blank">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectGitHub = '<a href="#" target="_blank">GitHub</a>'
+var HTMLprojectGitHub = '<a href="#" target="_blank">GitHub</a>';
 
 var HTMLschoolStart = '<div class="education-entry clear-fix"></div>';
 var HTMLschoolName = '<a href="#" target="_blank">%data%';

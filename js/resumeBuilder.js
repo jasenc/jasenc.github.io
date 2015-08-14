@@ -22,6 +22,7 @@ var bio = {
     "blogLink": "http://blog.jasencarroll.com/",
     "location": "Portland, OR"
   },
+  /*jshint multistr: true */
   "welcomeMessage": "Hello, welcome to my online resume. I am currently working\
                     towards making a career transition to Software & Web\
                     Development. Preferably I'd like to be full stack though \
@@ -79,13 +80,13 @@ var bio = {
       // append the div for HTMLskillsStart.
       $("#header").append(HTMLskillsStart);
       // Then for each item in bio.skills,
-      for (skill in bio.skills) {
+      for (var skill in bio.skills) {
         // append that skill to the div with id=skills using replace process.
         $("#skills").append(HTMLskills.replace("%data%", bio.skills[skill]));
       }
     }
   }
-}
+};
 
 var education = {
   // Schools is a nested array which takes each school as an object.
@@ -118,7 +119,7 @@ var education = {
   "display": function(){
 
     // For each entry in the array of schools of the education object.
-    for (school in education.schools) {
+    for (var school in education.schools) {
       // Append a new div to contain that school information.
       $("#education").append(HTMLschoolStart);
       // Replace the name in HTMLschoolName with the actual name, save it as formatName.
@@ -135,11 +136,11 @@ var education = {
       $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[school].dates));
       $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[school].location));
       $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[school].majors));
-    };
+    }
 
     // Repeat process for online classes
     $("#education").append(HTMLonlineClasses);
-    for (course in education.onlineCourses) {
+    for (var course in education.onlineCourses) {
       $("#education").append(HTMLschoolStart);
       var formatTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
       var formatTitleLink = formatTitle.replace("#", education.onlineCourses[course].link);
@@ -149,7 +150,7 @@ var education = {
       $(".education-entry:last").append(HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates));
     }
   }
-}
+};
 
 var work = {
   // Jobs is a nested array which takes each job as an object.
@@ -186,7 +187,7 @@ var work = {
   ],
   "display": function(){
     // For each item in jobs,
-    for (job in work.jobs) {
+    for (var job in work.jobs) {
 
       // append a new HTMLworkStart element to the div with id=workExperience.
       $("#workExperience").append(HTMLworkStart);
@@ -200,7 +201,7 @@ var work = {
       var formatDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
       // Concat these two strings as they are displayed on the same line.
-      var formatEmployerLinkTitle = formatEmployerLink.concat(formatTitle)
+      var formatEmployerLinkTitle = formatEmployerLink.concat(formatTitle);
 
       // Append job information to the DOM.
       $(".work-entry:last").append(formatEmployerLinkTitle);
@@ -209,7 +210,7 @@ var work = {
       $(".work-entry:last").append(formatDescription);
     }
   }
-}
+};
 
 var projects = {
   // Projects is a nested array which takes each job as an object.
@@ -232,12 +233,12 @@ var projects = {
   // Display is a function that is saved inside of the projects object.
   "display": function(){
     // For each project in the array projects of the object projects.
-    for (project in projects.projects) {
+    for (var project in projects.projects) {
       // Append a new div.
       $("#projects").append(HTMLprojectStart);
       // Replace '%data%' content with work JSON content.
       var formatTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-      var formatTitleLink = formatTitle.replace("#", projects.projects[project].link)
+      var formatTitleLink = formatTitle.replace("#", projects.projects[project].link);
       var formatDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
       var formatDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
       var formatGitHub = HTMLprojectGitHub.replace("#", projects.projects[project].description);
@@ -249,7 +250,7 @@ var projects = {
       $(".project-entry:last").append(formatGitHub);
     }
   }
-}
+};
 
 bio.display();
 work.display();
