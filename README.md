@@ -26,5 +26,5 @@ Please refer to [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate) f
 ## Authors
 
 Jasen Carroll  
-jasen.c8@gmail.com  
+jasen.c@icloud.com  
 Aug 10th, 2015
