@@ -30,7 +30,7 @@ html {
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #434a54;
     text-shadow: none;
 }
 
@@ -147,7 +147,13 @@ p {
     line-height: 21px;
 }
 
-.project-entry p {color: #bebebe;}
+.project-entry ul,
+.work-entry ul {
+  list-style-type: circle;
+  padding-top: 1em;
+}
+
+.work-entry li {color: #bebebe;}
 
 a {
     color: #1199c3;

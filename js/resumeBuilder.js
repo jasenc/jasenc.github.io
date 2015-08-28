@@ -23,16 +23,17 @@ var bio = {
     "location": "Portland, OR"
   },
   /*jshint multistr: true */
-  "welcomeMessage": "Hello, welcome to my online resume. I am currently working\
-                    towards making a career transition to Software & Web\
-                    Development. Preferably I'd like to be full stack though \
-                    back end programming would be a great alternative. Please\
-                    review my website, most notably my projects listed below\
-                    which include links to their hosted website as well as\
-                    their GitHub repository.",
+  "welcomeMessage": "I am actively seeking employment as a Full Stack Developer, however I am open to many \
+                     alternatives within the web and software development industries.\
+                     My years of professional experience have proven I am an efficient problem solver, \
+                     a great technical writer, and can effectively implement more robust and standalone \
+                     systems to drive efficiency and accuracy for your company. Furthermore I have previous \
+                     experience with software development, during my time at Drexel my courses included: an object \
+                     oriented CS course focusing on C++; programming micro-controllers in C; developing algorithms \
+                     for robotics; and my very own simulation of a rarified gas flow.",
   "resumeFile": "https://dl.dropboxusercontent.com/u/13604802/Resume.pdf?dl=1",
   // Skills is a nested array.
-  "skills": ["HTML", "CSS", "JavaScript", "Python", "SQL", "MySQL", "PostgreSQL"],
+  "skills": ["Python", "Flask", "Ruby", "Ruby on Rails", "SQL", "PostgreSQL", "HTML", "CSS", "Sass", "JavaScript"],
   "pic": "images/linkedIn.jpg",
   "display": function() {
     /*
@@ -160,9 +161,9 @@ var work = {
       "title": "CAPA Consultant",
       "location": "Portland, OR",
       "dates": "Feb 2015 - Jul 2015",
-      "description": "Drive CAPA to closure by auditing validation\
-                      documentation, contacting suppliers, authoring internal\
-                      memos.",
+      "description1": "Performed internal audit of supplier validation documentation, eliminated need for over 80% of documentation.",
+      "description2": "Contacted suppliers for missing validation documentation and evaluate compliance with company specifications.",
+      "description3": "Authored supporting validation documentation to help eliminate quality notifications and drive CAPA to closure.",
       "link": "http://www.acumed.net/"
     },
     {
@@ -170,9 +171,9 @@ var work = {
       "title": "Pilot Plant Lead",
       "location": "Los Angeles, CA",
       "dates": "Jan 2014 - Nov 2014",
-      "description": "Lead personnel and activities of R&D pilot plant for\
-                      consumer products - shampoo, conditioner, lotion,\
-                      sunscreen, face & body wash.",
+      "description1": "Lead all daily activities and personnel team of five for a pilot scale R&D manufacturing plant.",
+      "description2": "Created sustainable temporary solution to eliminate costly overhead, annual savings of $15,000.",
+      "description3": "Expanded Pilot Plant capacity by 60% by creating more robust systems and organization.",
       "link": "http://www.jnj.com/"
     },
     {
@@ -180,8 +181,9 @@ var work = {
       "title": "Validation Engineer",
       "location": "Los Angeles, CA",
       "dates": "Sep 2012 - Dec 2013",
-      "description": "Assist in remediation CAPA by authoring best-in-class\
-                      documentation and supporting batching activities.",
+      "description1": "Audited documentation, compiled data, and authored Process History Summaries, Process Validation Protocols and Reports, and Annual Validation Reports.",
+      "description2": "Monitored and evaluated manufacturing processes for improvements of efficiency in both time and labor.",
+      "description3": "Authored 65% of Process Validation Protocols & Annual Validation Reports while on team of five.",
       "link": "http://www.jnj.com/"
     }
   ],
@@ -198,7 +200,9 @@ var work = {
       var formatTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
       var formatDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
       var formatLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-      var formatDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+      var formatDescription1 = HTMLworkDescription.replace("%data%", work.jobs[job].description1);
+      var formatDescription2 = HTMLworkDescription.replace("%data%", work.jobs[job].description2);
+      var formatDescription3 = HTMLworkDescription.replace("%data%", work.jobs[job].description3);
 
       // Concat these two strings as they are displayed on the same line.
       var formatEmployerLinkTitle = formatEmployerLink.concat(formatTitle);
@@ -207,7 +211,10 @@ var work = {
       $(".work-entry:last").append(formatEmployerLinkTitle);
       $(".work-entry:last").append(formatDates);
       $(".work-entry:last").append(formatLocation);
-      $(".work-entry:last").append(formatDescription);
+      $(".work-entry:last").append(HTMLprojectDescriptionStart);
+      $(".descriptions:last").append(formatDescription1);
+      $(".descriptions:last").append(formatDescription2);
+      $(".descriptions:last").append(formatDescription3);
     }
   }
 };
@@ -216,18 +223,31 @@ var projects = {
   // Projects is a nested array which takes each job as an object.
   "projects": [
     {
+      "title": "Catalog App",
+      "dates": "August 2015",
+      "description1": "Dynamically generated Flask application with Google OAuth2, styled with Bootstrap, and hosted on Heroku.",
+      "description2": "Logged in users can create new categories and items as well as edit and delete them later – CRUD functionality.",
+      "description3": "Provides JSON and pretty print XML endpoints.",
+      "link": "https://fathomless-cove-4387.herokuapp.com/",
+      "github": "https://github.com/jasenc/catalog"
+    },
+    {
       "title": "Movie Trailers",
       "dates": "July 2015",
-      "description": "Using Python and server-side code this application dynamically generates a web page to display favorite movies.",
+      "description1": "Single-page dynamically generated site using Python, styled with Bootstrap, and hosted on GitHub pages.",
+      "description2": "Movie information is stored using classes and inheritance.",
+      "description3": "Utilizes various Python libraries to validate movie trailer URL, write content to a file, and host the content locally for preview.",
       "link": "https://jasenc.github.io/movie_trailers",
       "github": "https://github.com/jasenc/movie_trailers"
     },
     {
-      "title": "Tournament Results",
+      "title": "My Saas",
       "dates": "July 2015",
-      "description": "A program to capture relevant functions needed to properly execute a Swiss Pairings style tournament, with a PostgreSQL database.",
-      "link": "https://github.com/jasenc/tournament_results",
-      "github": "https://github.com/jasenc/movie_trailers"
+      "description1": "Dynamic Software as A Service website generated using Ruby on Rails.",
+      "description2": "Uses Stripe integration to collect payment information for premium subscription.",
+      "description3": "Hosted on Heroku and utilizing Postgres and SendGrid add-ons",
+      "link": "https://shielded-everglades-6566.herokuapp.com/",
+      "github": "https://github.com/jasenc/my_saas"
     }
   ],
   // Display is a function that is saved inside of the projects object.
@@ -240,20 +260,25 @@ var projects = {
       var formatTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
       var formatTitleLink = formatTitle.replace("#", projects.projects[project].link);
       var formatDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-      var formatDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+      var formatDescription1 = HTMLprojectDescription.replace("%data%", projects.projects[project].description1);
+      var formatDescription2 = HTMLprojectDescription.replace("%data%", projects.projects[project].description2);
+      var formatDescription3 = HTMLprojectDescription.replace("%data%", projects.projects[project].description3);
       var formatGitHub = HTMLprojectGitHub.replace("#", projects.projects[project].description);
 
       // Append job information to the DOM.
       $(".project-entry:last").append(formatTitleLink);
       $(".project-entry:last").append(formatDates);
-      $(".project-entry:last").append(formatDescription);
+      $(".project-entry:last").append(HTMLprojectDescriptionStart);
+      $(".descriptions:last").append(formatDescription1);
+      $(".descriptions:last").append(formatDescription2);
+      $(".descriptions:last").append(formatDescription3);
       $(".project-entry:last").append(formatGitHub);
     }
   }
 };
 
 bio.display();
+projects.display();
 work.display();
 education.display();
-projects.display();
 $("#mapDiv").append(googleMap);

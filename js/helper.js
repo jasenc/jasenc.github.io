@@ -31,12 +31,14 @@ var HTMLworkEmployer = '<a href="#" target="_blank">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkDescriptionStart = '<ul class="descriptions"></ul>';
+var HTMLworkDescription = '<li>%data%</li>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#" target="_blank">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
+var HTMLprojectDescriptionStart = '<ul class="descriptions"></ul>';
+var HTMLprojectDescription = '<li>%data%</li>';
 var HTMLprojectGitHub = '<a href="#" target="_blank">GitHub</a>';
 
 var HTMLschoolStart = '<div class="education-entry clear-fix"></div>';
