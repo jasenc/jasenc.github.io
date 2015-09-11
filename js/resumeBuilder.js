@@ -33,7 +33,7 @@ var bio = {
                      for robotics; and my very own simulation of a rarified gas flow.",
   "resumeFile": "https://dl.dropboxusercontent.com/u/13604802/Resume.pdf?dl=1",
   // Skills is a nested array.
-  "skills": ["Python", "Flask", "Ruby", "Ruby on Rails", "SQL", "PostgreSQL", "HTML", "CSS", "Sass", "JavaScript"],
+  "skills": ["Python", "Flask", "Ruby", "Ruby on Rails", "SQL", "PostgreSQL",  "Server Config", "HTML", "CSS", "Sass", "JavaScript"],
   "pic": "images/linkedIn.jpg",
   "display": function() {
     /*
