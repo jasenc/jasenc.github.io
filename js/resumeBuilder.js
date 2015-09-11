@@ -23,14 +23,15 @@ var bio = {
     "location": "Portland, OR"
   },
   /*jshint multistr: true */
-  "welcomeMessage": "I am actively seeking employment as a Full Stack Developer, however I am open to many \
-                     alternatives within the web and software development industries.\
-                     My years of professional experience have proven I am an efficient problem solver, \
-                     a great technical writer, and can effectively implement more robust and standalone \
-                     systems to drive efficiency and accuracy for your company. Furthermore I have previous \
-                     experience with software development, during my time at Drexel my courses included: an object \
-                     oriented CS course focusing on C++; programming micro-controllers in C; developing algorithms \
-                     for robotics; and my very own simulation of a rarified gas flow.",
+  "welcomeMessage": "My years of professional experience working at Johnson & \
+                     Johnson in consumer products followed by Acumed with \
+                     medical devices have proven I am an efficient problem \
+                     solver, a great technical writer, and can effectively \
+                     implement more robust and standalone systems to drive \
+                     efficiency and accuracy for your company. Now as a \
+                     certified Full Stack Web Developer and Engineer, I have a \
+                     broad range of skills that enable me to solve problems \
+                     from both hardware and software perspectives.",
   "resumeFile": "https://dl.dropboxusercontent.com/u/13604802/Resume.pdf?dl=1",
   // Skills is a nested array.
   "skills": ["Python", "Flask", "Ruby", "Ruby on Rails", "SQL", "PostgreSQL",  "Server Config", "HTML", "CSS", "Sass", "JavaScript"],
