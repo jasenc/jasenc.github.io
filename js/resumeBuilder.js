@@ -264,7 +264,7 @@ var projects = {
       var formatDescription1 = HTMLprojectDescription.replace("%data%", projects.projects[project].description1);
       var formatDescription2 = HTMLprojectDescription.replace("%data%", projects.projects[project].description2);
       var formatDescription3 = HTMLprojectDescription.replace("%data%", projects.projects[project].description3);
-      var formatGitHub = HTMLprojectGitHub.replace("#", projects.projects[project].description);
+      var formatGitHub = HTMLprojectGitHub.replace("#", projects.projects[project].github);
 
       // Append job information to the DOM.
       $(".project-entry:last").append(formatTitleLink);
