@@ -98,7 +98,7 @@ var education = {
       "location": "Philadelphia, PA",
       "degree": "B.S.",
       "majors": ["Mechanical Engineering"],
-      "dates": 2012,
+      "dates": "June, 2012",
       "link": "http://drexel.edu/"
     },
     {
@@ -106,7 +106,7 @@ var education = {
       "location": "East Stroudsburg, PA",
       "degree": "Transfer",
       "majors": ["Physics"],
-      "dates": 2009,
+      "dates": "May, 2009",
       "link": "http://www.esu.edu/"
     }
   ],
@@ -114,7 +114,7 @@ var education = {
     {
       "title": "Full Stack Nanodegree",
       "school": "Udacity",
-      "dates": 2015,
+      "dates": "September, 2015",
       "link": "https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004"
     }
   ],
