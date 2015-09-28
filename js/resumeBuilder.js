@@ -18,6 +18,8 @@ var bio = {
     "email": "jasen.c@icloud.com",
     "github": "jasenc",
     "githubLink": "https://github.com/jasenc",
+    "linkedIn": "jasenc",
+    "linkedInLink": "https://www.linkedin.com/in/jasenc",
     "blog": "blog.jasencarroll.com",
     "blogLink": "http://blog.jasencarroll.com/",
     "location": "Portland, OR"
@@ -63,11 +65,16 @@ var bio = {
     // display content.
     $("#topContacts").append(HTMLemail.replace(/%data%/g, bio.contacts.email));
     $("#footerContacts").append(HTMLemail.replace(/%data%/g, bio.contacts.email));
-    // Github has two different entries to be replaced.
-    var formatGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+    // Github and LinkedIn have two different entries to be replaced.
+    var formatGitHub = HTMLgitHub.replace("%data%", bio.contacts.github);
     var formatGitHubLink = formatGitHub.replace("#", bio.contacts.githubLink);
     $("#topContacts").append(formatGitHubLink);
     $("#footerContacts").append(formatGitHubLink);
+
+    var formatLinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn);
+    var formatLinkedInLink = formatLinkedIn.replace("#", bio.contacts.linkedInLink);
+    $("#topContacts").append(formatLinkedInLink);
+    $("#footerContacts").append(formatLinkedInLink);
 
     var formatBlog = HTMLblog.replace("%data%", bio.contacts.blog);
     var formatBlogLink = formatBlog.replace("#", bio.contacts.blogLink);

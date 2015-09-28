@@ -14,8 +14,8 @@ var HTMLheaderRole = '<span>%data%</span>';
 var HTMLcontactStart = '<h3 id="contact-h3">Contact:</h3>';
 var HTMLmobile = '<li class="list-contact"><span class="orange-text">mobile</span><span">%data%</span></li>';
 var HTMLemail = '<li class="list-contact"><span class="orange-text">email</span><a href="mailto:%data%" class="contact">%data%</a></li>';
-var HTMLtwitter = '<li class="list-contact"><span class="orange-text">twitter</span><span">%data%</span></li>';
-var HTMLgithub = '<li class="list-contact"><span class="orange-text">github</span><a href="#" target="_blank" class="contact">%data%</a></li>';
+var HTMLgitHub = '<li class="list-contact"><span class="orange-text">github</span><a href="#" target="_blank" class="contact">%data%</a></li>';
+var HTMLlinkedIn = '<li class="list-contact"><span class="orange-text">linkedin</span><a href="#" target="_blank" class="contact">%data%</a></li>';
 var HTMLblog = '<li class="list-contact"><span class="orange-text">blog</span><a href="#" target="_blank" class="contact">%data%</a></li>';
 var HTMLlocation = '<li class="list-contact"><span class="orange-text">location</span><span>%data%</span></li>';
 
