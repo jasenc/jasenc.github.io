@@ -23,7 +23,7 @@ var HTMLbioPic = '<img src="%data%" class="biopic"><hr/>';
 var HTMLwelcomeMsg = '<p class="welcome-message">%data%</p>';
 var HTMLresume = '<p class="welcome-message">Additionally a PDF version of my resume is available for download <a href="%data%" class="resume">here</a>.</p>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills"></ul>';
+var HTMLskillsStart = '<h3 id="skills-h3">Technical Skills:</h3><ul id="skills"></ul>';
 var HTMLskills = '<li class="skill"><span">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
