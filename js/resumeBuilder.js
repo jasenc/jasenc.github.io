@@ -34,7 +34,7 @@ var bio = {
                      certified Full Stack Web Developer and Engineer, I have a \
                      broad range of skills that enable me to solve problems \
                      from both hardware and software perspectives.",
-  "resumeFile": "https://dl.dropboxusercontent.com/u/13604802/Resume.pdf?dl=1",
+  "resumeFile": "https://dl.dropboxusercontent.com/u/13604802/Jasen_Carroll_Resume.pdf?dl=1",
   // Skills is a nested array.
   "skills": ["Python", "Flask", "Ruby", "Ruby on Rails", "SQL", "PostgreSQL",  "Server Config", "HTML", "CSS", "Sass", "JavaScript"],
   "pic": "images/linkedIn.jpg",
