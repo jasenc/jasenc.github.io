@@ -175,7 +175,7 @@ var work = {
         "Monitor Udacity's Full Stack student forums.",
         "Provide guidance to students in order to resolve issues or better understand topics."
       ],
-      "link": "http://www.acumed.net/"
+      "link": "https://www.udacity.com/"
     },
     {
       "employer": "Acumed Inc (consulting through Lab Support)",
