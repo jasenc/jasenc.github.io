@@ -11,7 +11,7 @@
 
 var bio = {
   "name": "Jasen Carroll",
-  "role": "Web Developer",
+  "role": "Web Developer: Fully Stacked",
   // Contacts is a nested object.
   "contacts": {
     "mobile": "971.285.4602",
@@ -25,15 +25,17 @@ var bio = {
     "location": "Portland, OR"
   },
   /*jshint multistr: true */
-  "welcomeMessage": "My years of professional experience working at Johnson & \
-                     Johnson in consumer products followed by Acumed with \
-                     medical devices have proven I am an efficient problem \
-                     solver, a great technical writer, and can effectively \
-                     implement more robust and standalone systems to drive \
-                     efficiency and accuracy for your company. Now as a \
-                     certified Full Stack Web Developer and Engineer, I have a \
-                     broad range of skills that enable me to solve problems \
-                     from both hardware and software perspectives.",
+  "welcomeMessage": "I'm a self motivated learner. I have three years of \
+                    professional experience in the industries of FDA compliance, \
+                    but what that means is I am a great technical writer, an \
+                    efficient problem solver, and can effectively implement more\
+                    robust and standalone systems to drive efficiency and \
+                    accuracy for your company. I've also had the benefit of \
+                    learning professional communication by working cross-functionally\
+                    throughout a global enterprise. I look forward to the \
+                    oppurtunity of working amongst your teams, perhaps even \
+                    directly with your clients, while I enhance my technical\
+                    skillsets and return to a life in technology.",
   "resumeFile": "https://dl.dropboxusercontent.com/u/13604802/Jasen_Carroll_Resume.pdf?dl=1",
   // Skills is a nested array.
   "skills": ["Python", "Flask", "Ruby", "Ruby on Rails", "SQLAlchemy", "PostgreSQL", "Git", "Ubuntu", "Vagrant", "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery"],
@@ -165,13 +167,25 @@ var work = {
   // Jobs is a nested array which takes each job as an object.
   "jobs": [
     {
+      "employer": "Udacity",
+      "title": "Forum Mentor",
+      "location": "Remote",
+      "dates": "September 2015 - Present",
+      "descriptions": [
+        "Monitor Udacity's Full Stack student forums.",
+        "Provide guidance to students in order to resolve issues or better understand topics."
+      ],
+      "link": "http://www.acumed.net/"
+    },
+    {
       "employer": "Acumed Inc (consulting through Lab Support)",
       "title": "CAPA Consultant",
-      "location": "Portland, OR",
+      "location": "Hillsboro, OR",
       "dates": "Feb 2015 - Jul 2015",
-      "description1": "Performed internal audit of supplier validation documentation, eliminated need for over 80% of documentation.",
-      "description2": "Contacted suppliers for missing validation documentation and evaluate compliance with company specifications.",
-      "description3": "Authored supporting validation documentation to help eliminate quality notifications and drive CAPA to closure.",
+      "descriptions": [
+        "Performed internal audit of supplier validation documentation, eliminating need for over 80% of documentation.",
+        "Contacted suppliers for missing validation documentation to drive CAPA to towards closure."
+      ],
       "link": "http://www.acumed.net/"
     },
     {
@@ -179,9 +193,11 @@ var work = {
       "title": "Pilot Plant Lead",
       "location": "Los Angeles, CA",
       "dates": "Jan 2014 - Nov 2014",
-      "description1": "Lead all daily activities and personnel team of five for a pilot scale R&D manufacturing plant.",
-      "description2": "Created sustainable temporary solution to eliminate costly overhead, annual savings of $15,000.",
-      "description3": "Expanded Pilot Plant capacity by 60% by creating more robust systems and organization.",
+      "descriptions": [
+        "Lead four direct reports and all daily activities for a small scale R&D manufacturing plant.",
+        "Created sustainable temporary solution to eliminate costly overhead, annual savings of $15,000.",
+        "Expanded Pilot Plant capacity by 60% by creating more robust systems and organization."
+      ],
       "link": "http://www.jnj.com/"
     },
     {
@@ -189,9 +205,10 @@ var work = {
       "title": "Validation Engineer",
       "location": "Los Angeles, CA",
       "dates": "Sep 2012 - Dec 2013",
-      "description1": "Audited documentation, compiled data, and authored Process History Summaries, Process Validation Protocols and Reports, and Annual Validation Reports.",
-      "description2": "Monitored and evaluated manufacturing processes for improvements of efficiency in both time and labor.",
-      "description3": "Authored 65% of Process Validation Protocols & Annual Validation Reports while on team of five.",
+      "descriptions": [
+        "Monitored and evaluated manufacturing processes for improvements of efficiency in both time and labor.",
+        "Authored 65% of Process Validation Protocols & Annual Validation Reports while on team of five."
+      ],
       "link": "http://www.jnj.com/"
     }
   ],
@@ -208,9 +225,6 @@ var work = {
       var formatTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
       var formatDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
       var formatLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-      var formatDescription1 = HTMLworkDescription.replace("%data%", work.jobs[job].description1);
-      var formatDescription2 = HTMLworkDescription.replace("%data%", work.jobs[job].description2);
-      var formatDescription3 = HTMLworkDescription.replace("%data%", work.jobs[job].description3);
 
       // Concat these two strings as they are displayed on the same line.
       var formatEmployerLinkTitle = formatEmployerLink.concat(formatTitle);
@@ -220,9 +234,11 @@ var work = {
       $(".work-entry:last").append(formatDates);
       $(".work-entry:last").append(formatLocation);
       $(".work-entry:last").append(HTMLprojectDescriptionStart);
-      $(".descriptions:last").append(formatDescription1);
-      $(".descriptions:last").append(formatDescription2);
-      $(".descriptions:last").append(formatDescription3);
+
+      for (var description in work.jobs[job].descriptions) {
+        var formatDescription = HTMLworkDescription.replace("%data%", work.jobs[job].descriptions[description]);
+        $(".descriptions:last").append(formatDescription);
+      }
     }
   }
 };
@@ -233,27 +249,30 @@ var projects = {
     {
       "title": "Catalog App",
       "dates": "August 2015",
-      "description1": "Dynamically generated Flask application with Google OAuth2, styled with Bootstrap, and hosted on Heroku.",
-      "description2": "Logged in users can create new categories and items as well as edit and delete them later – CRUD functionality.",
-      "description3": "Provides JSON and pretty print XML endpoints.",
+      "descriptions": [
+        "Dynamically generated Python Flask application providing JSON and pretty print XML endpoints.",
+        "Authenticated users, with Google OAuth2, have full CRUD functionality utilizing ORM with SQLAlchemy."
+      ],
       "link": "https://fathomless-cove-4387.herokuapp.com/",
       "github": "https://github.com/jasenc/catalog"
     },
     {
       "title": "Movie Trailers",
       "dates": "July 2015",
-      "description1": "Single-page dynamically generated site using Python, styled with Bootstrap, and hosted on GitHub pages.",
-      "description2": "Movie information is stored using classes and inheritance.",
-      "description3": "Utilizes various Python libraries to validate movie trailer URL, write content to a file, and host the content locally for preview.",
+      "descriptions": [
+        "Single-page dynamically generated site using Python, styled with Bootstrap, and hosted on GitHub pages.",
+        "Movie information is stored using classes using inheritance."
+      ],
       "link": "https://jasenc.github.io/movie_trailers",
       "github": "https://github.com/jasenc/movie_trailers"
     },
     {
-      "title": "My Saas",
+      "title": "Val Teams",
       "dates": "July 2015",
-      "description1": "Dynamic Software as A Service website generated using Ruby on Rails.",
-      "description2": "Uses Stripe integration to collect payment information for premium subscription.",
-      "description3": "Hosted on Heroku and utilizing Postgres and SendGrid add-ons",
+      "descriptions": [
+        "Software as A Service website generated using Ruby on Rails, hosted on Heroku with a PostgreSQL database.",
+        "Uses Stripe integration to collect payment information for premium subscription and SendGrid for email support."
+      ],
       "link": "https://shielded-everglades-6566.herokuapp.com/",
       "github": "https://github.com/jasenc/my_saas"
     }
@@ -268,18 +287,16 @@ var projects = {
       var formatTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
       var formatTitleLink = formatTitle.replace("#", projects.projects[project].link);
       var formatDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-      var formatDescription1 = HTMLprojectDescription.replace("%data%", projects.projects[project].description1);
-      var formatDescription2 = HTMLprojectDescription.replace("%data%", projects.projects[project].description2);
-      var formatDescription3 = HTMLprojectDescription.replace("%data%", projects.projects[project].description3);
       var formatGitHub = HTMLprojectGitHub.replace("#", projects.projects[project].github);
 
       // Append job information to the DOM.
       $(".project-entry:last").append(formatTitleLink);
       $(".project-entry:last").append(formatDates);
       $(".project-entry:last").append(HTMLprojectDescriptionStart);
-      $(".descriptions:last").append(formatDescription1);
-      $(".descriptions:last").append(formatDescription2);
-      $(".descriptions:last").append(formatDescription3);
+      for (var description in projects.projects[project].descriptions) {
+        var formatDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].descriptions[description]);
+        $(".descriptions:last").append(formatDescription);
+      }
       $(".project-entry:last").append(formatGitHub);
     }
   }
