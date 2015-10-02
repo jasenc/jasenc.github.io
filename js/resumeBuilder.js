@@ -37,7 +37,7 @@ var bio = {
   "resumeFile": "https://dl.dropboxusercontent.com/u/13604802/Jasen_Carroll_Resume.pdf?dl=1",
   // Skills is a nested array.
   "skills": ["Python", "Flask", "Ruby", "Ruby on Rails", "SQLAlchemy", "PostgreSQL", "Git", "Ubuntu", "Vagrant", "HTML", "CSS", "Bootstrap", "JavaScript", "jQuery"],
-  "pic": "images/linkedIn.jpg",
+  "pic": "images/pic.jpg",
   "display": function() {
     /*
       From inner most parenthesis out:
