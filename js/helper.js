@@ -127,7 +127,9 @@ function initializeMap() {
     // iterates through work locations and appends each location to
     // the locations array
     for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
+      if (work.jobs[job].location !== "Remote") {
+        locations.push(work.jobs[job].location);
+      }
     }
 
     return locations;
