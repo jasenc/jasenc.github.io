@@ -183,7 +183,7 @@ var work = {
       "location": "Hillsboro, OR",
       "dates": "Feb 2015 - Jul 2015",
       "descriptions": [
-        "Performed internal audit of supplier validation documentation, eliminating need for over 80% of documentation.",
+        "Performed internal audit of supplier validation documentation and eliminated the need for over 80% of documentation.",
         "Contacted suppliers for missing validation documentation to drive CAPA to towards closure."
       ],
       "link": "http://www.acumed.net/"
