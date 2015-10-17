@@ -11,7 +11,7 @@
 
 var bio = {
   "name": "Jasen Carroll",
-  "role": "Web Developer: Fully Stacked",
+  "role": "Web Developer",
   // Contacts is a nested object.
   "contacts": {
     "mobile": "971.285.4602",
