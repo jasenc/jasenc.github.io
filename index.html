@@ -31,7 +31,8 @@
 						<li><a href="#one" class="active">About</a></li>
 						<li><a href="#two">Skills</a></li>
 						<li><a href="#three">Accomplishments</a></li>
-						<li><a href="#four">Contact</a></li>
+						<li><a href="#four">Code</a></li>
+						<li><a href="#five">Contact</a></li>
 					</ul>
 					<ul class="icons">
 						<li><a href="https://github.com/jasenc" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
@@ -128,13 +129,54 @@
 							</section>
 
 						<!-- Four -->
-							<section id="four">
+
+
+						<section id="four">
+							<div class="container">
+								<h3>Code</h3>
+								<p>I enjoy studying algorithms and will be adding more as I
+									continue working on them. In the mean time check out some
+									of the things I've done recently:</p>
+								<section>
+									<header>
+										<h4>Average Life Expectancy</h4>
+										<p>JavaScript, Object Oriented, Higher Order Functions</p>
+									</header>
+									<p>
+										With a set of data from a family tree, calculate the
+										average life expectantcy by century. </br>
+									</p>
+									<pre><code>function averageLifeExpectancy(array) {
+var centuryGroups = {};
+array.forEach(function(person){
+	century = Math.ceil(person.died/100);
+	age = person.died - person.born;
+	if (!(century in centuryGroups)) {
+		centuryGroups[century] = [];
+	}
+	centuryGroups[century].push(age);
+});
+for (var key in centuryGroups) {
+	centuryGroups[key] = average(centuryGroups[key]);
+}
+return centuryGroups;
+}									</code></pre>
+									<p><sup>
+										Note: The commented edition of this code, along with
+										full sandbox is available at <a href="https://github.com/jasenc/eloquent/blob/master/ch-5.js">jasenc/eloquent</a>
+									</sup><p>
+									</section>
+								</div>
+							</section>
+
+						<!-- Five -->
+							<section id="five">
 								<div class="container">
 									<h3>Contact</h3>
 									<p>There's a lot to me that you haven't seen yet! Maybe you
 										have an oppurtunity you'd like to share with me or
 										wondering what I am currently working on - either way how
-									 	about we get in touch?</p>
+										about we get in touch?</p>
 									<form method="post" action="//formspree.io/jasenc@icloud.com">
 										<div class="row uniform">
 											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
@@ -156,11 +198,10 @@
 									</form>
 								</div>
 							</section>
-
-						</div>
 					</div>
+			</div>
 
-		<!-- Scripts -->
+			<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollzer.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
