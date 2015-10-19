@@ -3,6 +3,10 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+/*
+	Updated and modified by Jasen Carroll
+	Oct 15th, 2015
+*/
 
 (function($) {
 
@@ -11,6 +15,7 @@
 		large: '(max-width: 1280px)',
 		medium: '(max-width: 1024px)',
 		small: '(max-width: 736px)',
+		code: '(max-width: 530px)',
 		xsmall: '(max-width: 480px)'
 	});
 
@@ -20,6 +25,21 @@
 			$header = $('#header'),
 			$nav = $('#nav'), $nav_a = $nav.find('a'),
 			$wrapper = $('#wrapper');
+			$portrait = $('#portrait');
+			$landscape = $('#landscape');
+
+		var $switch = function() {
+				if ($(document).width() < 530) {
+					$landscape.hide();
+					$portrait.show();
+				} else {
+					$landscape.show();
+					$portrait.hide();
+				}
+			};
+
+			$(document).ready($switch);
+			$(window).resize($switch);
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();

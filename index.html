@@ -34,18 +34,16 @@
 						<li><a href="#four">Code</a></li>
 						<li><a href="#five">Contact</a></li>
 					</ul>
-					<ul class="icons">
-						<li><a href="https://github.com/jasenc" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
-					</ul>
 				</nav>
+				<ul class="icons">
+					<li><a href="https://github.com/jasenc" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
+					<li><a href="mailto:jasen.c@icloud.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					<li><a href="https://dl.dropboxusercontent.com/u/13604802/Jasen_Carroll_Resume.pdf" class="icon fa-file-pdf-o" target="_blank"><span class="label">Resume</span></a></li>
+					<li><a href="https://www.linkedin.com/in/jasenc" class="icon fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+					<li><a href="http://blog.jasencarroll.com/" class="icon fa-rss" target="_blank"><span class="label">Blog</span></a></li>
+				</ul>
 				<footer>
-					<ul class="icons">
-						<li><a href="https://github.com/jasenc" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
-						<li><a href="mailto:jasen.c@icloud.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						<li><a href="https://dl.dropboxusercontent.com/u/13604802/Jasen_Carroll_Resume.pdf" class="icon fa-file-pdf-o" target="_blank"><span class="label">Resume</span></a></li>
-						<li><a href="https://www.linkedin.com/in/jasenc" class="icon fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
-						<li><a href="http://blog.jasencarroll.com/" class="icon fa-rss" target="_blank"><span class="label">Blog</span></a></li>
-					</ul>
+
 				</footer>
 			</section>
 
@@ -132,7 +130,12 @@
 
 
 						<section id="four">
-							<div class="container">
+							<div id="portrait" class="container">
+								<h3>Code</h3>
+								<p>I'm going to need you to try going landscape before I show you my naughty
+								bits there, big guy.</p>
+							</div>
+							<div id="landscape" class="container">
 								<h3>Code</h3>
 								<p>I enjoy studying algorithms and will be adding more as I
 									continue working on them. In the mean time check out some
@@ -147,19 +150,19 @@
 										average life expectantcy by century. </br>
 									</p>
 									<pre><code>function averageLifeExpectancy(array) {
-var centuryGroups = {};
-array.forEach(function(person){
-	century = Math.ceil(person.died/100);
-	age = person.died - person.born;
-	if (!(century in centuryGroups)) {
-		centuryGroups[century] = [];
-	}
-	centuryGroups[century].push(age);
-});
-for (var key in centuryGroups) {
-	centuryGroups[key] = average(centuryGroups[key]);
-}
-return centuryGroups;
+    var centuryGroups = {};
+    array.forEach(function(person){
+        century = Math.ceil(person.died/100);
+        age = person.died - person.born;
+        if (!(century in centuryGroups)) {
+            centuryGroups[century] = [];
+        }
+        centuryGroups[century].push(age);
+    });
+    for (var key in centuryGroups) {
+        centuryGroups[key] = average(centuryGroups[key]);
+    }
+    return centuryGroups;
 }									</code></pre>
 									<p><sup>
 										Note: The commented edition of this code, along with
@@ -172,6 +175,7 @@ return centuryGroups;
 						<!-- Five -->
 							<section id="five">
 								<div class="container">
+
 									<h3>Contact</h3>
 									<p>There's a lot to me that you haven't seen yet! Maybe you
 										have an oppurtunity you'd like to share with me or
