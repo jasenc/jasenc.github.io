@@ -154,31 +154,33 @@
 										<p>JavaScript, Object Oriented, Higher Order Functions</p>
 									</header>
 									<p>
-										With a set of data from a family tree, calculate the
-										average life expectantcy by century. </br>
+										Provided with an array of family ancestry, this function
+										returns the average life expectantcy by century returning
+										an object that automatically generates keys on an as needed
+										basis.
 									</p>
 									<pre><code>function averageLifeExpectancy(array) {
-    var centuryGroups = {};
-    array.forEach(function(person){
-        century = Math.ceil(person.died/100);
-        age = person.died - person.born;
-        if (!(century in centuryGroups)) {
-            centuryGroups[century] = [];
-        }
-        centuryGroups[century].push(age);
-    });
-    for (var key in centuryGroups) {
-        centuryGroups[key] = average(centuryGroups[key]);
+  var centuryGroups = {};
+  array.forEach(function(ancestor){
+    century = Math.ceil(ancestor.death/100);
+    age = ancestor.death - ancestor.born;
+    if (!(century in centuryGroups)) {
+      centuryGroups[century] = [];
     }
-    return centuryGroups;
-}									</code></pre>
+    centuryGroups[century].push(age);
+  });
+  for (var key in centuryGroups) {
+    centuryGroups[key] = average(centuryGroups[key]);
+  }
+  return centuryGroups;
+}								</code></pre>
 									<p><sup>
 										Note: The commented edition of this code, along with
 										full sandbox is available at <a href="https://github.com/jasenc/eloquent/blob/master/ch-5.js">jasenc/eloquent</a>
 									</sup><p>
-									</section>
-								</div>
-							</section>
+								</section>
+							</div>
+						</section>
 
 						<!-- Five -->
 							<section id="five">
