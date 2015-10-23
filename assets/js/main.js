@@ -47,12 +47,12 @@
 					},
 					success: function(data) {
 						$contactButton.prop('value', 'Success!');
-						$contactButton.css('background-color', '#3c763d');
+						$contactButton.css('background-color', '#51F1B1');
 
 					},
 					error: function(err) {
 						$contactButton.prop('value', 'Error :(');
-						$contactButton.css('background-color', '#a94442');
+						$contactButton.css('background-color', '#FF8855');
 						$contactButton.prop('disabled', false);
 					},
 				});
