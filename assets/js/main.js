@@ -28,19 +28,6 @@
 			$portrait = $('#portrait');
 			$landscape = $('#landscape');
 
-		var $switch = function() {
-				if ($(document).width() < 530) {
-					$landscape.hide();
-					$portrait.show();
-				} else {
-					$landscape.show();
-					$portrait.hide();
-				}
-			};
-
-			$(document).ready($switch);
-			$(window).resize($switch);
-
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
 
