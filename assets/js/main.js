@@ -43,12 +43,11 @@
 					dataType: "json",
 					beforeSend: function() {
 						$contactButton.prop('value', 'Loading...');
-						$contactButton.prop('disabled', false);
 					},
 					success: function(data) {
 						$contactButton.prop('value', 'Success!');
 						$contactButton.css('background-color', '#51F1B1');
-
+						$contactButton.prop('disabled', false);
 					},
 					error: function(err) {
 						$contactButton.prop('value', 'Error :(');
