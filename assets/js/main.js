@@ -27,6 +27,37 @@
 			$wrapper = $('#wrapper');
 			$portrait = $('#portrait');
 			$landscape = $('#landscape');
+			$contactForm = $('#contact-form');
+			$contactButton = $('#contact-button');
+
+		// Contact form
+			$contactForm.submit(function(e){
+				// prevent the form from submitting over HTTP Post
+				e.preventDefault();
+				$contactButton.prop('disabled', true);
+				$.ajax({
+					url: "//formspree.io/jasen.c@icloud.com",
+					method: "POST",
+					// Serialize the data from our Contact Form.
+					data: $(this).serialize(),
+					dataType: "json",
+					beforeSend: function() {
+						$contactButton.prop('value', 'Loading...');
+						$contactButton.prop('disabled', false);
+					},
+					success: function(data) {
+						$contactButton.prop('value', 'Success!');
+						$contactButton.css('background-color', '#3c763d');
+
+					},
+					error: function(err) {
+						$contactButton.prop('value', 'Error :(');
+						$contactButton.css('background-color', '#a94442');
+						$contactButton.prop('disabled', false);
+					},
+				});
+			});
+
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
