@@ -134,16 +134,50 @@
 
 						<!-- Four -->
 
-						<!--
 						<section id="four">
 							<div id="portrait" class="container">
 								<h3>Code</h3>
-								<p>Quit peaking! I'm going through my code and will be uploading
-									some samples soon enough.
-								</p>
+								<p>I'm going to need you to try going landscape before I show you my naughty
+								bits there, big guy.</p>
+							</div>
+							<div id="landscape" class="container">
+								<h3>Code</h3>
+								<p>I enjoy studying algorithms and will be adding more as I
+									continue working on them. In the mean time check out some
+									of the things I've done recently:</p>
+								<section>
+									<header>
+										<h4>Average Life Expectancy</h4>
+										<p>JavaScript, Object Oriented, Higher Order Functions</p>
+									</header>
+									<p>
+										Provided with an array of family ancestry, this function
+										returns the average life expectantcy by century returning
+										an object that automatically generates keys on an as needed
+										basis.
+									</p>
+									<pre><code>function averageLifeExpectancy(array) {
+	var centuryGroups = {};
+	array.forEach(function(ancestor){
+		century = Math.ceil(ancestor.death/100);
+		age = ancestor.death - ancestor.born;
+		if (!(century in centuryGroups)) {
+			centuryGroups[century] = [];
+		}
+		centuryGroups[century].push(age);
+	});
+	for (var key in centuryGroups) {
+		centuryGroups[key] = average(centuryGroups[key]);
+	}
+	return centuryGroups;
+}								</code></pre>
+									<p><sup>
+										Note: The commented edition of this code, along with
+										full sandbox is available at <a href="https://github.com/jasenc/eloquent/blob/master/ch-5.js">jasenc/eloquent</a>
+									</sup><p>
+								</section>
 							</div>
 						</section>
-						-->
 
 						<!-- Five -->
 							<section id="five">
